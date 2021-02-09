@@ -1,0 +1,4 @@
+access-list 1 permit 172.31.171.0 0.0.0.15
+access-list 1 deny any
+int g0/0
+ip access-group 1 out
