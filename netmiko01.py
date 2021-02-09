@@ -12,4 +12,4 @@ device_params = {
 }
 
 with ConnectHandler(**device_params) as ssh:
-    pass
+    ssh.send_config_from_file()
