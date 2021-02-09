@@ -1,0 +1,9 @@
+int g0/1
+ip address 172.31.171.34 255.255.255.240
+no sh
+int g0/2
+ip address 172.31.171.50 255.255.255.240
+no sh
+int g0/3
+ip address 172.31.171.65 255.255.255.240
+no sh
