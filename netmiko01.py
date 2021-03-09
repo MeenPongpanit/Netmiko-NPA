@@ -1,4 +1,5 @@
-from netmiko import ConnectHandler
+# from netmiko import ConnectHandler
+import netmiko
 
 username = 'admin'
 password = 'cisco'
@@ -24,7 +25,13 @@ devices_ip = {
 
 for device in devices_ip:
     device_params['ip'] = devices_ip[device]
-    with ConnectHandler(**device_params) as ssh:
-        print(f'Configuring {device}...')
-        ssh.send_config_from_file(f'./config/{device}.txt')
-        # print(ssh.send_command('sh ip int br'))
+    with netmiko.ConnectHandler(**device_params) as ssh:
+        # print(f'Configuring {device}...')
+        # ssh.send_config_from_file(f'./loopback/{device}.txt')
+        if device in [f'R{i}' for i in range(1, 6)]:
+            print(f'Configuring {device}...')
+            ssh.send_config_from_file('/accesslist_tnssh/task4.txt')
+            # ssh.send_config_from_file(f'./datacontrol/{device}.txt')
+            # ssh.send_config_from_file(f'./accesslist/{device}.txt')
+        ssh.send_command('wr')
+        print(ssh.send_command('sh ip int br'))

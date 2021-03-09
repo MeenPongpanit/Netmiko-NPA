@@ -1,0 +1,12 @@
+ip access-list extended allow_telnet_ssh
+permit tcp 172.31.171.0 0.0.0.15 eq telnet
+permit tcp 172.31.171.0 0.0.0.15 eq ssh
+permit tcp 10.253.190.0 0.0.0.255 eq telnet
+permit tcp 10.253.190.0 0.0.0.255 eq ssh
+deny any
+
+line vty 0 4
+ip access-list allow_telnet_ssh in
+
+
+
