@@ -1,0 +1,3 @@
+lldp run
+int ra g0/0-1
+cdp enable

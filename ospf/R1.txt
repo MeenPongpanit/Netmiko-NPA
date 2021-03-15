@@ -1,0 +1,4 @@
+router ospf 1
+network 172.31.171.17 0.0.0.0 area 0
+network 172.31.171.33 0.0.0.0 area 0
+network 172.20.171.4 0.0.0.0 area 0
